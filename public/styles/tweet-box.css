@@ -39,8 +39,10 @@
 }
 
 .tweet-box .content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   height: 100px;
-  padding: 40px 10px;
+  padding: 20px 10px 10px 10px;
   border-bottom: 1px solid grey;
   text-align: left
 }

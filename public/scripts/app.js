@@ -1,5 +1,7 @@
-$(() => {
-  function createHeaderElement(userInfo) {
+$(function() {
+
+  //==============================******* Helper functions ******==============================
+  function createTweetBoxHeader(userInfo) {
     const $header = $('<header>');
     const $img = $('<img/>').attr({
       'class': 'user-avatar',
@@ -12,15 +14,14 @@ $(() => {
     return $header;
   }
 
-  function createContent(content) {
+  function createTweetBoxContent(content) {
     const $p = $('<p>').text(content.text).addClass('content');
     return $p;
   }
 
-  function createFooter(time) {
+  function createTweetBoxFooter(time) {
     const $footer = $('<footer>');
     const $p = $('<p>').text(Math.round(time*1.15741e-8) + ' days ago');
-    // const $icons = $('div').addClass('icons');
     const $iconMarkup = $(`
     <div class='icons '>
       <i class="fa fa-flag" aria-hidden="true"></i>
@@ -32,11 +33,11 @@ $(() => {
     return $footer;
   }
 
-  function createTweetElement(tweet) {
+  function createTweetBoxElement(tweet) {
     const $tweet = $("<article>").addClass("tweet-box");
-    const $header = createHeaderElement(tweet.user);
-    const $p = createContent(tweet.content);
-    const $footer = createFooter(tweet.created_at);
+    const $header = createTweetBoxHeader(tweet.user);
+    const $p = createTweetBoxContent(tweet.content);
+    const $footer = createTweetBoxFooter(tweet.created_at);
     $tweet.append($header);
     $tweet.append($p);
     $tweet.append($footer);
@@ -46,38 +47,59 @@ $(() => {
   function renderTweets(tweets) {
     $('#tweets-container').empty();
     tweets.forEach((tweetData) => {
-      const $tweet = createTweetElement(tweetData);
-      $('#tweets-container').append($tweet);
-    })
+      const $tweet = createTweetBoxElement(tweetData);
+      $('#tweets-container').prepend($tweet);
+    });
   }
 
+//================================****** Main functions declaration ******======================
   function loadTweets() {
     $.ajax({
       url: '/tweets',
       method: 'get'
     }).done((data) => {
-      renderTweets(data)
+      renderTweets(data);
     });
   }
 
-  loadTweets();
+  function submitForm() {
+    const $form = $('#tweet-submit-form');
+    $form.on('submit', function(event) {
+      event.preventDefault();
+      const form = $(this);
+      if (!form.find('textarea').val().trim().length) {
+        alert('Can not post empty content!');
+        return;
+      }
+      if (form.find('textarea').val().length > 140) {
+        const content = form.find('textarea').val();
+        alert('Exceeds the max allowed character!');
+        form.find('textarea').val(content);
+        return;
+      }
+      $.ajax({
+        url:'/tweets' ,
+        method: 'post',
+        data: form.serialize(),
+      }).done((data) => {
+          loadTweets(data);
+        })
+      form.find('textarea').val('');
+    });
+  }
 
-  const $form = $('form');
-  
-  $form.on('submit', function(e) {
-    e.preventDefault();
-    console.log('submitted');
-    const form = $(this);
-    $.ajax({
-      url:'/tweets' ,
-      method: 'post',
-      data: form.serialize(),
-    }).done((data) => {
-      console.log(data);
-      // renderTweets(data)
-      loadTweets(data)
+  function toggleCompose() {
+    $('#compose').click(function() {
+      $('.new-tweet').toggle();
+      if($('.new-tweet')[0].style.display === 'block') {
+        $('.new-tweet').find('textarea').focus();
+      }
     })
-    $form.find('textarea').val('');
-  });
+  }
+
+//===========================******* Function Invocations *******======================================
+  loadTweets();
+  submitForm();
+  toggleCompose();
 
 })

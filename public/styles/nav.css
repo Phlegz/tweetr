@@ -20,3 +20,17 @@
   font-size: 30px;
   line-height: 75px;
 }
+
+#compose {
+  width: 90px;
+  height: 50px;
+  float: right;
+  line-height: 40px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+#compose:hover {
+  cursor: pointer;
+  color: tomato;
+}
