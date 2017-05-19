@@ -21,7 +21,7 @@ $(function() {
 
   function createTweetBoxFooter(time) {
     const $footer = $('<footer>');
-    const $p = $('<p>').text(Math.round(time*1.15741e-8) + ' days ago');
+    const $p = $('<p>').text(time);
     const $iconMarkup = $(`
     <div class='icons '>
       <i class="fa fa-flag" aria-hidden="true"></i>
@@ -37,7 +37,7 @@ $(function() {
     const $tweet = $("<article>").addClass("tweet-box");
     const $header = createTweetBoxHeader(tweet.user);
     const $p = createTweetBoxContent(tweet.content);
-    const $footer = createTweetBoxFooter(tweet.created_at);
+    const $footer = createTweetBoxFooter(moment(tweet.created_at).fromNow());
     $tweet.append($header);
     $tweet.append($p);
     $tweet.append($footer);
