@@ -55,8 +55,9 @@
 }
 
 .tweet-box footer p {
-  font-size: 10px;
+  font-size: 11px;
   float: left;
+  line-height: 11px;
 }
 
 .tweet-box .icons {
@@ -70,5 +71,5 @@
 }
 
 .tweet-box:hover .icons {
-    display: block;
+  display: block;
 }

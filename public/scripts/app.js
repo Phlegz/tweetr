@@ -7,10 +7,10 @@ $(function() {
       'class': 'user-avatar',
       'src': userInfo.avatars.small,
       'alt': 'User Avatar'
-    })
-    const $pName = $('<p>').text(userInfo.name).addClass('name');
-    const $pUsername = $('<p>').text(userInfo.handle).addClass('username');
-    $header.append($img).append($pName).append($pUsername);
+    });
+    const $name = $('<p>').text(userInfo.name).addClass('name');
+    const $username = $('<p>').text(userInfo.handle).addClass('username');
+    $header.append($img).append($name).append($username);
     return $header;
   }
 
@@ -23,10 +23,10 @@ $(function() {
     const $footer = $('<footer>');
     const $p = $('<p>').text(time);
     const $iconMarkup = $(`
-    <div class='icons '>
-      <i class="fa fa-flag" aria-hidden="true"></i>
-      <i class="fa fa-retweet" aria-hidden="true"></i>
-      <i class="fa fa-heart" aria-hidden="true"></i>
+    <div class='icons'>
+      <i class='fa fa-flag' aria-hidden='true'></i>
+      <i class='fa fa-retweet' aria-hidden='true'></i>
+      <i class='fa fa-heart' aria-hidden='true'></i>
     </div>
     `);
     $footer.append($p).append($iconMarkup);
@@ -34,7 +34,7 @@ $(function() {
   }
 
   function createTweetBoxElement(tweet) {
-    const $tweet = $("<article>").addClass("tweet-box");
+    const $tweet = $('<article>').addClass('tweet-box');
     const $header = createTweetBoxHeader(tweet.user);
     const $p = createTweetBoxContent(tweet.content);
     const $footer = createTweetBoxFooter(moment(tweet.created_at).fromNow());
@@ -83,24 +83,24 @@ $(function() {
         data: form.serialize(),
       }).done((data) => {
           loadTweets(data);
-        })
+        });
       form.find('textarea').val('');
-      form.find('.counter')[0].innerHTML = '140'
+      form.find('.counter')[0].innerHTML = '140';
     });
   }
 
-  function toggleCompose() {
+  function toggleComposeButton() {
     $('#compose').click(function() {
       $('.new-tweet').slideToggle();
       if($('.new-tweet')[0].style.display === 'block') {
         $('.new-tweet').find('textarea').focus();
       }
-    })
+    });
   }
 
-//===========================******* Function Invocations *******======================================
+//=============================******* Function Invocations *******=================================
   loadTweets();
   submitForm();
-  toggleCompose();
+  toggleComposeButton();
 
-})
+});
