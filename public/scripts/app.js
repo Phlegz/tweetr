@@ -90,7 +90,7 @@ $(function() {
 
   function toggleCompose() {
     $('#compose').click(function() {
-      $('.new-tweet').toggle();
+      $('.new-tweet').slideToggle();
       if($('.new-tweet')[0].style.display === 'block') {
         $('.new-tweet').find('textarea').focus();
       }
