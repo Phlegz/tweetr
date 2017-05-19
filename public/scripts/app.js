@@ -85,6 +85,7 @@ $(function() {
           loadTweets(data);
         })
       form.find('textarea').val('');
+      form.find('.counter')[0].innerHTML = '140'
     });
   }
 
