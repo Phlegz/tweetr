@@ -16,3 +16,9 @@ Tweeter is a simple, single-page Twitter clone using HTML, CSS, JS, jQuery and A
 - mongodb
 - body-parser
 - chance
+
+## Screenshots
+
+!['Screenshot of the tweetr page'](https://github.com/Phlegz/tweetr/blob/master/docs/tweeter-page.png?raw=true)
+!['Screenshot of the tweets in the compose mode'](https://github.com/Phlegz/tweetr/blob/master/docs/toggle-compose-button.png?raw=true)
+!['Screenshot of the tweets in the view mode'](https://github.com/Phlegz/tweetr/blob/master/docs/toggle-compose-button2.png?raw=true)
