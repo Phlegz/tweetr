@@ -1,0 +1,50 @@
+#nav-bar {
+  background-color: #00a087;
+  color: #e8fdff;
+  height: 80px;
+  left: 0;
+  padding: 0 4em;
+  position: fixed;
+  top: 0;
+  width:100%;
+  z-index: 1;
+}
+
+#nav-bar {
+    #compose {
+      border-radius: 10px;
+      float: right;
+      font-size: 18px;
+      height: 60px;
+      line-height: 40px;
+      margin-top: 10px;
+      width: 120px;
+      &:hover {
+        color: tomato;
+        cursor: pointer;
+      }
+    }
+}
+
+#nav-bar {
+    .fa-pencil-square-o {
+      line-height: 40px;
+      margin-right: 5px;
+    }
+}
+
+#nav-bar {
+    .header {
+      float: left;
+      font-size: 30px;
+      line-height: 75px;
+    }
+}
+
+#nav-bar {
+    .logo {
+      float: left;
+      height: 80px;
+      width: 80px;
+    }
+}

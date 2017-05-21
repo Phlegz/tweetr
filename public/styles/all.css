@@ -1,0 +1,154 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+  overflow-y: scroll; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+.container {
+  width: 600px;
+  text-align: center;
+  margin: auto;
+  background-color: White;
+  margin-top: 80px;
+  padding: 10px 30px; }
+
+#nav-bar {
+  background-color: #00a087;
+  color: #e8fdff;
+  height: 80px;
+  left: 0;
+  padding: 0 4em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+#nav-bar #compose {
+  border-radius: 10px;
+  float: right;
+  font-size: 18px;
+  height: 60px;
+  line-height: 40px;
+  margin-top: 10px;
+  width: 120px; }
+  #nav-bar #compose:hover {
+    color: tomato;
+    cursor: pointer; }
+
+#nav-bar .fa-pencil-square-o {
+  line-height: 40px;
+  margin-right: 5px; }
+
+#nav-bar .header {
+  float: left;
+  font-size: 30px;
+  line-height: 75px; }
+
+#nav-bar .logo {
+  float: left;
+  height: 80px;
+  width: 80px; }
+
+.new-tweet {
+  background-color: #e6d8d8;
+  border-radius: 5px;
+  margin-top: 15px;
+  overflow: hidden;
+  padding: 15px; }
+
+.new-tweet h2 {
+  margin: 0;
+  text-align: left; }
+
+.new-tweet form input {
+  float: left; }
+
+.new-tweet form textarea {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%; }
+
+.new-tweet span {
+  float: right; }
+
+.tweet-box {
+  border: 1px solid red;
+  border-radius: 10px;
+  margin: 15px 0; }
+
+.tweet-box header {
+  background-color: #eee;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px; }
+
+.tweet-box .name {
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px; }
+
+.tweet-box p {
+  margin: 0; }
+
+.tweet-box .content {
+  border-bottom: 1px solid grey;
+  height: 100px;
+  overflow-wrap: break-word;
+  padding: 20px 10px 10px 10px;
+  text-align: left;
+  word-wrap: break-word; }
+
+.tweet-box footer {
+  height: 30px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: left; }
+
+.tweet-box footer p {
+  float: left;
+  font-size: 11px;
+  line-height: 11px; }
+
+.tweet-box .icons {
+  display: none;
+  float: right;
+  font-size: 10px; }
+
+.tweet-box .icons i {
+  margin-left: 5px; }
+
+.tweet-box:hover .icons {
+  display: block; }
+
+.tweet-box .user-avatar {
+  border-radius: 5px;
+  float: left;
+  height: 40px;
+  margin-right: 5px;
+  width: 40px; }
+
+.tweet-box .username {
+  float: right;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px; }

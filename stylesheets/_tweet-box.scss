@@ -1,0 +1,101 @@
+.tweet-box {
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.tweet-box {
+    header {
+      background-color: #eee;
+      border-radius: 10px 10px 0 0;
+      margin: 0;
+      overflow: hidden;
+      padding: 10px;
+    }
+}
+
+.tweet-box {
+    .name {
+      float: left;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 25px;
+    }
+}
+
+.tweet-box {
+    p {
+      margin: 0;
+    }
+}
+
+.tweet-box {
+    .content {
+      border-bottom: 1px solid grey;
+      height: 100px;
+      overflow-wrap: break-word;
+      padding: 20px 10px 10px 10px;
+      text-align: left;
+      word-wrap: break-word;
+    }
+}
+
+.tweet-box {
+    footer {
+      height: 30px;
+      overflow: hidden;
+      padding:10px;
+      text-align: left;
+    }
+}
+
+.tweet-box {
+    footer {
+      p {
+        float: left;
+        font-size: 11px;
+        line-height: 11px;
+      }
+    }
+}
+
+.tweet-box {
+    .icons {
+      display: none;
+      float: right;
+      font-size: 10px;
+    }
+}
+.tweet-box {
+    .icons {
+      i {
+        margin-left: 5px;
+      }
+    }
+}
+
+.tweet-box:hover {
+    .icons {
+      display: block;
+    }
+}
+
+
+.tweet-box {
+    .user-avatar {
+      border-radius: 5px;
+      float: left;
+      height: 40px;
+      margin-right: 5px;
+      width: 40px;
+    }
+}
+
+.tweet-box {
+    .username {
+      float: right;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 25px;
+    }
+}

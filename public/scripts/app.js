@@ -102,5 +102,4 @@ $(function() {
   loadTweets();
   submitForm();
   toggleComposeButton();
-
 });

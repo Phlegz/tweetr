@@ -11,5 +11,4 @@ $(document).ready(() => {
         $(counter).text(charRemaining).css('color', 'red');
     }
   });
-  console.log('ready');
 })
